@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/11.0.0/build/font/octicons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <a class="navbar-brand" href="#">GitHub Profiler</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="rounded-circle" width="30">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right bg-secondary text-white" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-white" href="/user/{{ user.username }}">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-white" href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="bg-secondary text-white" id="sidebar-wrapper" style="width: 250px; min-height: 100vh;">
+            <div class="sidebar-heading">Dashboard</div>
+            <div class="list-group list-group-flush">
+                <a href="/user/{{ user.username }}" class="list-group-item list-group-item-action bg-secondary text-white">Profile</a>
+                <a href="{{ user.contact_link }}" class="list-group-item list-group-item-action bg-secondary text-white">Hire</a>
+                {% if user.contact_link %}
+                <a href="{{ user.contact_link }}" class="list-group-item list-group-item-action bg-secondary text-white">Contact Me: {{ user.contact_link }}</a>
+                {% else %}
+                <span class="list-group-item bg-secondary text-white">No contact link provided.</span>
+                {% endif %}
+                <!-- Add other sidebar items here -->
+            </div>
+        </div>
+
+        <div class="container-fluid p-4">
+            <h1>Welcome, {{ user.username }}!  {% if is_verified %}<span class="verified-tick"></span> {% endif %}</h1>
+            <h2>Hire, <span id="username_display_header">{{ username_display }}!</span><img src="{{ url_for('static', filename='images/verify.png') }}" alt="Verified" style="vertical-align: middle; width: 30px; height: 30px;"><span style="color: green; font-size: small;"> is verified</span></h2>
+            <form id="github-search-form">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="github-username" placeholder="GitHub Username" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+            <div class="d-flex">
+                <button id="logout" class="btn btn-danger align-button mb-3">Logout</button>
+                {% if user.contact_link %}
+                <a href="{{ user.contact_link }}" class="btn btn-primary align-button mb-3">Hire</a>
+                {% else %}
+                <span class="btn btn-secondary align-button disabled">Hire</span>
+                {% endif %}
+            </div>
+
+            <div id="github-user-info" class="card bg-secondary text-white hidden">
+                <div class="card-body text-center">
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <img id="avatar" src="" alt="Profile Picture" width="100" class="rounded-circle mr-3">
+                        <div>
+                            <h3 class="mb-0"><span id="name" class="verified-tick"></span></h3>
+                        </div>
+                    </div>
+                    <p>Username: <span id="username_display" class="verified-tick mb-0"></span></p>
+                    <p>Public Repos: <span id="public_repos"></span></p>
+                    <p>Followers: <span id="followers"></span></p>
+                    <p>Following: <span id="following"></span></p>
+                    <p>GitHub Profile Link: <a id="profile_link" href="" target="_blank" class="blue-button">View Profile</a></p>
+                    <p>Known Languages: <span id="languages"></span></p>
+                    <p>Stars Earned: <span id="stars"></span></p>
+                    <div id="star-images"></div>
+                </div>
+            </div>
+                
+            <div id="contributions" class="mt-4 hidden">
+                <h3>GitHub Contributions</h3>
+                <img src="" id="contributions-image" alt="GitHub Contributions">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#github-search-form').on('submit', function (event) {
+                event.preventDefault();
+                const username = $('#github-username').val();
+                $.ajax({
+                    url: "{{ url_for('github_search') }}",
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ github_username: username }),
+                    success: function (data) {
+                        $('#avatar').attr('src', data.avatar_url);
+                        $('#name').text(data.name + ' ');
+                        $('#username_display').text(data.login + ' ');
+                        $('#username_display_header').text(data.login + ' '); // Update the header
+                        $('#public_repos').text(data.public_repos);
+                        $('#followers').text(data.followers);
+                        $('#following').text(data.following);
+                        $('#profile_link').attr('href', data.html_url);
+                        $('#stars').text(data.stars);
+                        $('#languages').text(data.languages.join(', '));
+
+                        // Populate star images
+                        $('#star-images').empty();
+                        for (let i = 0; i < data.stars; i++) {
+                            $('#star-images').append('<img src="star_image_url" alt="Star" width="20">');
+                        }
+
+                        // Embed GitHub contributions image
+                        $('#contributions-image').attr('src', `https://ghchart.rshah.org/${username}`);
+
+                        $('#github-user-info').removeClass('hidden');  // Show the user info section
+                        $('#contributions').removeClass('hidden');  // Show the contributions info section after hiding
+                    },
+                    error: function () {
+                        $('#github-user-info').html('<p>Error fetching GitHub user info.</p>');
+                    }
+                });
+            });
+
+            $('#logout').on('click', function () {
+                $.ajax({
+                    url: "{{ url_for('logout') }}",
+                    method: 'POST',
+                    success: function () {
+                        window.location.href = "{{ url_for('home') }}";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

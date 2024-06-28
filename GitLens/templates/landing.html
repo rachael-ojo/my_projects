@@ -1,0 +1,107 @@
+ <!-- templates/landing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to GitLens</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-dark text-white">
+    <section class="row mb-5 py-5 full-width-section text-center bg-image">
+        <div class="col-12 d-flex flex-column justify-content-center align-items-center text-overlay">
+            <div>
+                <h1 style="color: white;"> Get exclusive opportunities</h1>
+                <p style="color: white;">Unlock Exclusive Opportunities with GitLens - Discover top talent and unparalleled career prospects in the GitHub community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center mb-5 bg-darker-black py-5 full-width-section">
+        <div class="container">
+            <h2 class="mb-4">Hire the top 1% of talent on GitHub</h2>
+            <a class="btn btn-success btn-lg" href="{{ url_for('register_page') }}" role="button">Sign Up</a>
+            <a class="btn btn-success btn-lg" href="{{ url_for('login_page') }}" role="button">Login</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="row text-center mb-5 py-5">
+            <div class="col-md-6">
+                <div class="p-3 bg-secondary rounded">
+                    <p>I rely on the Gitlens badge to showcase my credibility, helping me secure top projects and expand my client base - connect with top-tier talent and propel your projects to new heights with our exclusive platform."</p>
+                    <p><strong>Ojo Rachael</strong> | FULL STACK EXPERT </p>
+                    <p>Total earnings: $100K+ | Total repos: 57 | Total stars: 373</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 bg-secondary rounded">
+                    <p>"Join a community where innovation meets excellence.  -  The Gitlens badge serves as that additional layer of credibility on my profile which helps me win more jobs and introduces me to more clients."</p>
+                    <p><strong>Miles A.</strong> | Award Winning Mobile App Developer</p>
+                    <p>Total earnings: $100,000 | Total repos: 66 | Total stars: 1,388</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="text-center mb-5 bg-darker-black py-5 full-width-section">
+        <div class="container">
+            <h2>Trusted by</h2>
+            <div class="d-flex justify-content-center">
+                <img src="{{ url_for('static', filename='microsoft.png') }}" alt="Microsoft" class="mx-3" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='airbnb.png') }}" alt="Airbnb" class="mx-3" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='hearst.png') }}" alt="Hearst" class="mx-3" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='mccormick.png') }}" alt="McCormick" class="mx-3" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='glassdoor.png') }}" alt="Glassdoor" class="mx-3" style="max-height: 50px;">
+                <img src="{{ url_for('static', filename='shutterstock.png') }}" alt="Shutterstock" class="mx-3" style="max-height: 50px;">
+            </div>
+        </div>
+    </section>
+
+    <section class="row mb-5 py-5 full-width-section">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Description 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h2>About Us</h2>
+                <p> <p>Explore our team's dedication to excellence and our commitment to driving innovation in every project we undertake. - Our plan to next level.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="row text-white bg-darker-black mb-5 py-5 full-width-section">
+        <div class="col-md-6 d-flex align-items-center" style="padding-left: 50px;">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>At GitHub Profiler, - We aim to empower opportunity.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/Orange.jpg') }}" alt="Description 2" class="img-fluid rounded">
+        </div>
+    </section>
+
+    <div class="container">
+        <footer class="text-center mt-5">
+            <p>Contact us: <a href="mailto:contact@jobportal.com" class="text-white">contact@jobportal.com</a></p>
+            <div>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook" style="padding-bottom: 20px;"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter" style="padding-bottom: 20px;"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin" style="padding-bottom: 20px;"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

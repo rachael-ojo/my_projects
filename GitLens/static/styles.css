@@ -1,0 +1,223 @@
+body {
+    background-color: #000;
+    color: #fff;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1, .card-title {
+    color: #4CAF50;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-success, .btn-secondary {
+    margin-top: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.bg-secondary {
+    background-color: #333 !important;
+}
+
+/* .bg-light{
+    background-color: #000 !important; #make background white
+} */
+
+.bg-lighter-white {
+    background-color: #222 !important;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+a.text-white:hover {
+    text-decoration: none;
+    color: #ccc;
+}
+
+img.rounded {
+    border-radius: 8px;
+}
+
+.full-width-section {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-image {
+    background: url("images/image.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Adjust height as needed */
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg-image h1, .bg-image p {
+    color: white;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.sidebar-heading {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    background: #333;
+    text-align: center;
+}
+
+.verified-tick::after {
+    content: '✓';
+    color: red;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+#github-user-info img {
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+#star-images img {
+    margin: 5px;
+}
+
+#contributions img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.blue-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+#github-user-info {
+    max-width: 400px; /* Adjust the max-width as needed */
+    padding: 20px;
+    margin: 20px auto; /* Center the card */
+}
+
+/* Center elements within the GitHub search card */
+#github-user-info .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Added for text alignment */
+}
+
+.align-button {
+    /* padding: 10px 20px; */
+    margin: 0.5px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+}
+
+.align-button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional style for the danger button (Logout) */
+.btn-danger.align-button {
+    background-color: red;
+}
+
+.btn-danger.align-button:hover {
+    background-color: darkred;
+}
+
+/* Additional style for the secondary button (disabled Hire) */
+.btn-secondary.align-button {
+    background-color: grey;
+}
+
+.btn-secondary.align-button:hover {
+    background-color: darkgrey;
+}
+
+.input-group .form-control, 
+.input-group .btn {
+    box-shadow: none;
+    margin: 0.1px;
+}
+
+.background-image {
+    background-image: url("images/Mount.jpg");/* Adjust the path as needed */
+    background-size: cover;
+    background-position: center;
+}
+
+.background-image1 {
+    background-image: url('images/odd.jpg'); /* Adjust the path as needed */
+    background-size: cover;
+    background-position: center;
+}
