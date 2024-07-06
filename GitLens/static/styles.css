@@ -41,15 +41,15 @@ footer {
 }
 
 .bg-secondary {
-    background-color: #fefe !important;
+    background-color: #333 !important;
 }
 
-/* .bg-light{
-    background-color: #fefe !important; #make background white
+/* .bg-dark{
+    background-color: #000 !important; #make background black
 } */
 
-.bg-lighter-white {
-    background-color: #000 !important;
+.bg-darker-black {
+    background-color: #222 !important;
 }
 
 .btn-success {
@@ -109,7 +109,7 @@ img.rounded {
 
 .verified-tick::after {
     content: '✓';
-    color: blue;
+    color: red;
     font-weight: bold;
 }
 
@@ -135,7 +135,7 @@ img.rounded {
 .blue-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: red;
+    background-color: blue;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -188,7 +188,7 @@ img.rounded {
 
 /* Additional style for the danger button (Logout) */
 .btn-danger.align-button {
-    background-color: blue;
+    background-color: red;
 }
 
 .btn-danger.align-button:hover {
@@ -197,11 +197,11 @@ img.rounded {
 
 /* Additional style for the secondary button (disabled Hire) */
 .btn-secondary.align-button {
-    background-color: red;
+    background-color: grey;
 }
 
 .btn-secondary.align-button:hover {
-    background-color: darkred;
+    background-color: darkgrey;
 }
 
 .input-group .form-control, 
