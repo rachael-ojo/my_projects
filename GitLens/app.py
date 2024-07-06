@@ -180,7 +180,7 @@ def github_search():
     data = request.json
     username = data.get('github_username')
     headers = {
-        'Authorization': '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'
+        'Authorization': 'token INSERT_YOUR_TOKEN_HERE'
     }
     user_url = f'https://api.github.com/users/{username}'
     repos_url = f'https://api.github.com/users/{username}/repos'
