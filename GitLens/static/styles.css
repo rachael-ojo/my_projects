@@ -77,7 +77,7 @@ img.rounded {
 }
 
 .bg-image {
-    background: url("images/image.jpg") no-repeat center center;
+    background: url("images/image.jpeg") no-repeat center center;
     background-size: cover;
     height: 100vh; /* Adjust height as needed */
     position: relative;
@@ -211,13 +211,13 @@ img.rounded {
 }
 
 .background-image {
-    background-image: url("images/Mount.jpg");/* Adjust the path as needed */
+    background-image: url("images/image.jpeg");/* Adjust the path as needed */
     background-size: cover;
     background-position: center;
 }
 
 .background-image1 {
-    background-image: url('images/odd.jpg'); /* Adjust the path as needed */
+    background-image: url("images/image.jpeg"); /* Adjust the path as needed */
     background-size: cover;
     background-position: center;
 }
