@@ -77,7 +77,7 @@ img.rounded {
 }
 
 .bg-image {
-    background: url("images/image.jpg") no-repeat center center;
+    background: url("") no-repeat center center;
     background-size: cover;
     height: 100vh; /* Adjust height as needed */
     position: relative;
@@ -217,7 +217,7 @@ img.rounded {
 }
 
 .background-image1 {
-    background-image: url('images/odd.jpg'); /* Adjust the path as needed */
+    background-image: url(''); /* Adjust the path as needed */
     background-size: cover;
     background-position: center;
 }

@@ -21,7 +21,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="rounded-circle" width="30">
+                        <img src="{{ url_for('static', filename='./images/image4.png') }}" alt="Image 1" class="rounded-circle" width="30">
                         {{ user.username }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right bg-secondary text-white" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@
 
         <div class="container-fluid p-4">
             <h1>Welcome, {{ user.username }}!  {% if is_verified %}<span class="verified-tick"></span> {% endif %}</h1>
-            <h2>Hire, <span id="username_display_header">{{ username_display }}!</span><img src="{{ url_for('static', filename='images/verify.png') }}" alt="Verified" style="vertical-align: middle; width: 30px; height: 30px;"><span style="color: green; font-size: small;"> is verified</span></h2>
+            <h2>Hire, <span id="username_display_header">{{ username_display }}!</span><img src="{{ url_for('static', filename='./images/verify.png') }}" alt="Verified" style="vertical-align: middle; width: 30px; height: 30px;"><span style="color: green; font-size: small;"> is verified</span></h2>
             <form id="github-search-form">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="github-username" placeholder="GitHub Username" required>
