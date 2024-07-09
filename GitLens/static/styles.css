@@ -77,7 +77,11 @@ img.rounded {
 }
 
 .bg-image {
+<<<<<<< HEAD
     background: url("") no-repeat center center;
+=======
+    background: url("images/image.jpeg") no-repeat center center;
+>>>>>>> f82d6cbf23329a6b357f317b6daf715642b5cce2
     background-size: cover;
     height: 100vh; /* Adjust height as needed */
     position: relative;
@@ -211,13 +215,17 @@ img.rounded {
 }
 
 .background-image {
-    background-image: url("images/Mount.jpg");/* Adjust the path as needed */
+    background-image: url("images/image.jpeg");/* Adjust the path as needed */
     background-size: cover;
     background-position: center;
 }
 
 .background-image1 {
+<<<<<<< HEAD
     background-image: url(''); /* Adjust the path as needed */
+=======
+    background-image: url("images/image.jpeg"); /* Adjust the path as needed */
+>>>>>>> f82d6cbf23329a6b357f317b6daf715642b5cce2
     background-size: cover;
     background-position: center;
 }
